@@ -6,6 +6,6 @@ int main(void)
 	BSP_LED_Init(LED3);
 	while (true) {
 		BSP_LED_Toggle(LED3);
-		HAL_Delay(100);
+		HAL_Delay(500);
 	}
 }
