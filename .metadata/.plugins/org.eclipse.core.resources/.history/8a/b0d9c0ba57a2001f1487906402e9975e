@@ -1,0 +1,36 @@
+#include "KeyboardTsLcd.h"
+
+#include <stm32f4xx_hal.h>
+
+int
+main(void)
+{
+	KeyboardTsLcd *keyboard;
+	LedLcd *led;
+
+	keyboard = new KeyboardTsLcd();
+	led = new LedLcd(2);
+
+	for (;;) {
+		switch(keyboard->eRead()) {
+		case BUTTON_0:
+			led->On(3);
+			break;
+		case BUTTON_1:
+			led->On(2);
+			break;
+		case BUTTON_2:
+			led->On(1);
+			break;
+		case BUTTON_3:
+			led->On(0);
+			break;
+		default:
+			led->On(LED_NONE);
+			break;
+		}
+		BSP_LED_Init(LED_3);
+		HAL_Delay(100);
+	}
+
+}
