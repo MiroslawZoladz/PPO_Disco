@@ -1,3 +1,5 @@
+//1a. Zmodyfikowac program tak aby dioda pulsowała z częstotliwoscia 2Hz
+
 #include <stm32f4xx_hal.h>
 #include <stm32f429i_discovery.h>
 
